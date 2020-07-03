@@ -1,25 +1,29 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import ExpenseDashboard from "./Components/ExpenseDashboard/expense-dashboard-page.component.jsx";
-import AddExpense from "./Components/AddExpense/add-expense-component.jsx";
-import Help from "./Components/Help/help.component.jsx";
-import EditExpense from "./Components/EditExpense/edit-expense.component.jsx";
-import NotFoundError from "./Components/404Error/404-error.component.jsx";
+
+import AppRouter from "./app-routers/app-routers.jsx";
+import configStore from "./redux/store.js";
+import { addExpense } from "./redux/expenses-actions.js";
+import { setTextFilter } from "./redux/filters.actions.js";
+import getVisibleExpenses from "./redux/expenses-selectors.js";
+
 import "./App.css";
+
+const store = configStore();
+store.dispatch(addExpense({ description: "water bill" }));
+store.dispatch(addExpense({ description: "phone bill" }));
+store.dispatch(addExpense({ description: "gas bill" }));
+store.dispatch(setTextFilter("bill"));
+store.dispatch(setTextFilter("water"));
+const state = store.getState();
+const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
+console.log(state);
+console.log(visibleExpenses);
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/create" component={AddExpense} />
-            <Route exact path="/dashboard" component={ExpenseDashboard} />
-            <Route path="/edit" component={EditExpense} />
-            <Route exact path="/help" component={Help} />
-            <Route component={NotFoundError} />
-          </Switch>
-        </BrowserRouter>
+        <AppRouter />
       </div>
     );
   }
