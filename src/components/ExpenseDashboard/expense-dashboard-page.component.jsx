@@ -1,10 +1,11 @@
 import React from "react";
-
-import ConnectedExpenseList from "../ExpenseList/expense-list.component";
+import ExpenseListFilters from "../ExpenseListFilters/expense-list-filters.component";
+import ExpenseList from "../ExpenseList/expense-list.component";
 
 const ExpenseDashboard = () => (
   <div>
-    <ConnectedExpenseList />
+    <ExpenseListFilters />
+    <ExpenseList />
   </div>
 );
 

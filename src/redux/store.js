@@ -2,7 +2,7 @@ import { createStore, combineReducers } from "redux";
 import expensesReducer from "./expenses-reducer";
 import filtersReducer from "./filters-reducer";
 
-export default () => {
+const configStore = () => {
   const store = createStore(
     combineReducers({
       expenses: expensesReducer,
@@ -12,3 +12,5 @@ export default () => {
 
   return store;
 };
+
+export default configStore;
