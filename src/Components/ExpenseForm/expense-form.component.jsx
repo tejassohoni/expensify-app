@@ -23,11 +23,11 @@ class ExpenseForm extends React.Component {
 
   onDescriptionChange = (e) => {
     const description = e.target.value;
-    this.setState(() => ({ description: description }));
+    this.setState(() => ({ description }));
   };
   onNoteChange = (e) => {
     const note = e.target.value;
-    this.setState(() => ({ note: note }));
+    this.setState(() => ({ note }));
   };
 
   onAmountChange = (e) => {
@@ -50,11 +50,7 @@ class ExpenseForm extends React.Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    if (
-      !this.state.description ||
-      !this.state.amount ||
-      !this.state.createdAt
-    ) {
+    if (!this.state.description || !this.state.amount) {
       this.setState(() => ({ error: "Please enter the necessary details" }));
     } else {
       this.setState(() => ({ error: "" }));
