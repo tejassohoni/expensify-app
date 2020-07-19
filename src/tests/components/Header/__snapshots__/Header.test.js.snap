@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header component 1`] = `
+<div>
+  <h1>
+    Expensify
+  </h1>
+  <[object Object]
+    activeClassName="isActive"
+    exact={true}
+    to="/"
+  >
+    Dashboard
+     
+  </[object Object]>
+  <[object Object]
+    activeClassName="isActive"
+    to="/create"
+  >
+    Create
+     
+  </[object Object]>
+</div>
+`;

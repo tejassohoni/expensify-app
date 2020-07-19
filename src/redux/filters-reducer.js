@@ -6,8 +6,6 @@ const filtersReducerDefaultState = {
   sortBy: "date",
   startDate: moment().startOf("month"),
   endDate: moment().endOf("month"),
-  startDateId: uuid(),
-  endDateId: uuid(),
 };
 
 const filtersReducer = (state = filtersReducerDefaultState, action) => {
