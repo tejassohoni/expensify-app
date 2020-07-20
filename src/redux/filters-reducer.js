@@ -1,5 +1,4 @@
 import moment from "moment";
-import { v1 as uuid } from "uuid";
 
 const filtersReducerDefaultState = {
   text: "",

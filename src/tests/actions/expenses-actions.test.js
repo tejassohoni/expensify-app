@@ -9,6 +9,7 @@ import {
   setExpenses,
   startSetExpenses,
   startRemoveExpenses,
+  startEditExpenses,
 } from "../../Redux/expenses-actions";
 import expenses from "../fixtures/expenses";
 import database from "../../Firebase/firebase";
@@ -146,6 +147,29 @@ test("should remove the expenses from firebase", (done) => {
     })
     .then((snapshot) => {
       expect(snapshot.val()).toBeFalsy();
+      done();
+    });
+});
+
+test("should edit expense on firebase", (done) => {
+  const store = createMockStore({});
+  const id = expenses[0].id;
+  const updates = {
+    amount: 450000,
+  };
+  store
+    .dispatch(startEditExpenses(id, updates))
+    .then(() => {
+      const actions = store.getActions();
+      expect(actions[0]).toEqual({
+        type: "EDIT_EXPENSE",
+        id,
+        updates,
+      });
+      return database.ref(`expenses/${id}`).once("value");
+    })
+    .then((snapshot) => {
+      expect(snapshot.val().amount).toBe(updates.amount);
       done();
     });
 });

@@ -1,5 +1,3 @@
-import { v1 as uuid } from "uuid";
-
 import database from "../Firebase/firebase";
 
 export const addExpense = (expense) => ({
@@ -8,7 +6,8 @@ export const addExpense = (expense) => ({
 });
 
 export const startAddExpense = (expenseData = {}) => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
     const {
       description = "",
       note = "",
@@ -17,7 +16,7 @@ export const startAddExpense = (expenseData = {}) => {
     } = expenseData;
     const expense = { description, note, amount, createdAt };
     return database
-      .ref("expenses")
+      .ref(`users/${uid}/expenses`)
       .push(expense)
       .then((ref) => {
         dispatch(
@@ -35,11 +34,35 @@ export const removeExpense = ({ id } = {}) => ({
   id,
 });
 
+export const startRemoveExpenses = ({ id } = {}) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    return database
+      .ref(`users/${uid}/expenses/${id}`)
+      .remove()
+      .then(() => {
+        dispatch(removeExpense({ id }));
+      });
+  };
+};
+
 export const editExpense = (id, updates) => ({
   type: "EDIT_EXPENSE",
   id,
   updates,
 });
+
+export const startEditExpenses = (id, updates) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    return database
+      .ref(`users/${uid}/expenses/${id}`)
+      .update(updates)
+      .then(() => {
+        dispatch(editExpense(id, updates));
+      });
+  };
+};
 
 export const setExpenses = (expenses) => ({
   type: "SET_EXPENSES",
@@ -47,9 +70,10 @@ export const setExpenses = (expenses) => ({
 });
 
 export const startSetExpenses = () => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
     return database
-      .ref("expenses")
+      .ref(`users/${uid}/expenses`)
       .once("value")
       .then((snapshot) => {
         const expenses = [];
@@ -62,17 +86,6 @@ export const startSetExpenses = () => {
         });
 
         dispatch(setExpenses(expenses));
-      });
-  };
-};
-
-export const startRemoveExpenses = ({ id } = {}) => {
-  return (dispatch) => {
-    return database
-      .ref(`expenses/${id}`)
-      .remove()
-      .then(() => {
-        dispatch(removeExpense({ id }));
       });
   };
 };
