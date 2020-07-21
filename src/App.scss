@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.isActive {
+  font-weight: bold;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+.page-header {
+  background: #f7f7f7;
+  color: #393e46;
+  padding: 1rem 0;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
+.page-header__actions {
+  border-radius: 5px;
+  text-decoration: none;
+  background: #076fb9;
+  display: inline-block;
+  max-width: auto;
+  border: none;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.page-header__actions:hover {
+  background: #076fa5;
+  transition: all 1s ease;
+}
+
+.page-header__title {
+  margin: 0;
+  font-weight: 100;
+  span {
+    font-weight: bold;
+  }
+}
+
+.button {
+  border-radius: 5px;
+  background: #076fb9;
+  border: none;
+  padding: 1rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+
+  &:hover {
+    background: #076fa5;
+    transition: all 1s ease;
+  }
+}
+
+.content-container {
+  max-width: 60rem;
+  margin: 0 auto 1rem;
+  padding: 0 10px;
+}
+.container-button {
+  display: flex;
+}
+
+.text-input {
+  border-radius: 5px;
+  border: 1px solid #cacccd;
+  height: 50px;
+  padding: 1rem;
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  @media (min-width: 45rem) {
+    flex-direction: row;
+    margin-bottom: 2rem;
+  }
+}
+
+.input-group__item {
+  margin-bottom: 1rem;
+  @media (min-width: 45rem) {
+    margin-right: 1rem;
+    margin: 0 0.5rem 0 0;
+  }
+}
+
+.remove-button {
+  background: #808080;
+  &:hover {
+    background: #696969;
+    transition: all 1s ease;
+  }
+}
+
+.cancel-button {
+  text-decoration: none;
+  margin: 1rem;
+  border-radius: 5px;
+  background: #fa8072;
+  border: none;
+  padding: 1rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  &:hover {
+    background: #fa7572;
+    transition: all 1s ease;
+  }
+}

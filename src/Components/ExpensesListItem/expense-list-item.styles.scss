@@ -1,0 +1,40 @@
+.list-item {
+  border: 1px solid darken(#f7f7f7, 7%);
+  color: #444;
+  border-top: none;
+  display: flex;
+  text-decoration: none;
+  flex-direction: column;
+  padding: 1rem;
+  transition: background, 0.3s ease;
+
+  &:hover {
+    background: #f7f7f7;
+  }
+  @media (min-width: 45rem) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+    align-items: center;
+  }
+}
+
+.list-item__title {
+  margin: 0;
+  margin-right: 20rem;
+  word-break: break-all;
+  margin-bottom: 0.5rem;
+}
+
+.list-item__subtitle {
+  color: #666;
+  font-size: 1.4rem;
+}
+
+.list-item__data {
+  margin: 1rem 0 0 0;
+  @media (min-width: 45rem) {
+    margin: 0;
+    padding-left: 1rem;
+  }
+}

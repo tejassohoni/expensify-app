@@ -1,0 +1,26 @@
+.header {
+  background: #222831;
+}
+
+.header__title {
+  color: white;
+  text-decoration: none;
+  h1 {
+    margin: 0;
+  }
+}
+
+.header__button {
+  background: none;
+  border: none;
+
+  color: white;
+  font-weight: 100;
+  font-size: 1.3rem;
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
