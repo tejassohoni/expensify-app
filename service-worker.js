@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/expensify-app/precache-manifest.d92c4413afaa65399d5ecc23bbc52cea.js"
+  "/expensify-app/precache-manifest.fad10c73560eeaaeae2d88ffcbb087a5.js"
 );
 
 self.addEventListener('message', (event) => {
