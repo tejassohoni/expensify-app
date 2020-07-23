@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "homepage": "https://tejassohoni.github.io/expensify-app/",
+=======
+  "homepage": "http://tejassohoni/expensify-app",
+>>>>>>> 2e0d6d3e39142f2bbe830abb0b2cbdd1a6b98305
   "name": "expensify-app",
   "version": "0.1.0",
   "private": true,
