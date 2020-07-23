@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c0cac35224066985030b80c3c20680e8",
+    "revision": "d656aec0b06046f486170be19dec2923",
     "url": "/expensify-app/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/expensify-app/static/css/2.19b7558e.chunk.css"
   },
   {
-    "revision": "936eb45539629112f4f6",
+    "revision": "965c78e6d2c3fc892b2f",
     "url": "/expensify-app/static/css/main.00d5eeba.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/expensify-app/static/js/2.a93beb93.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "936eb45539629112f4f6",
-    "url": "/expensify-app/static/js/main.b084e4f3.chunk.js"
+    "revision": "965c78e6d2c3fc892b2f",
+    "url": "/expensify-app/static/js/main.c2c01b46.chunk.js"
   },
   {
     "revision": "ab8fa1f5edb773cecc75",
